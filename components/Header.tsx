@@ -1,5 +1,6 @@
 import React from 'react';
 import { View } from '../types';
+import { Sparkles, PenTool, Menu, Shield } from 'lucide-react';
 
 interface HeaderProps {
   currentView: View;
@@ -11,8 +12,7 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({
   currentView,
   setView,
-  onMenuClick,
-  onNavigateSection
+  onMenuClick
 }) => {
   const handleNavClick = (sectionId: string) => {
     if (currentView !== 'portfolio') {
@@ -29,7 +29,7 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <header className="sticky top-0 z-40 py-3 px-4 md:px-8 bg-[#FAF8F5]/90 backdrop-blur-md border-b border-gray-200/80 transition-all">
-      {/* --- Vista Móvil --- */}
+      {/* --- Mobile Bar --- */}
       <div className="relative w-full flex justify-between items-center h-14 md:hidden">
         <div
           className="h-full flex items-center cursor-pointer"
@@ -46,13 +46,11 @@ export const Header: React.FC<HeaderProps> = ({
           className="p-2 text-[#121212] hover:text-[#2739e5] rounded-lg transition-colors"
           aria-label="Abrir menú"
         >
-          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
+          <Menu className="w-6 h-6" />
         </button>
       </div>
 
-      {/* --- Vista de Escritorio --- */}
+      {/* --- Desktop Navigation --- */}
       <div className="hidden md:flex w-full max-w-6xl mx-auto items-center justify-between h-14">
         <div
           className="h-full flex items-center cursor-pointer group"
@@ -68,7 +66,7 @@ export const Header: React.FC<HeaderProps> = ({
           />
         </div>
 
-        <nav className="flex items-center gap-7 text-sm font-bold tracking-tight">
+        <nav className="flex items-center gap-7 text-xs font-bold uppercase tracking-wider">
           <button
             onClick={() => handleNavClick('about')}
             className="text-gray-700 hover:text-[#2739e5] transition-colors"
@@ -92,9 +90,9 @@ export const Header: React.FC<HeaderProps> = ({
 
           <button
             onClick={() => handleNavClick('doodles')}
-            className="text-gray-700 hover:text-[#2739e5] transition-colors flex items-center gap-1.5"
+            className="text-gray-700 hover:text-[#2739e5] transition-colors flex items-center gap-1"
           >
-            <span className="text-xs">✨</span>
+            <Sparkles className="w-3.5 h-3.5 text-[#2739e5]" />
             <span>doodles</span>
           </button>
 
@@ -102,13 +100,14 @@ export const Header: React.FC<HeaderProps> = ({
 
           <button
             onClick={() => setView('draw')}
-            className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all ${
+            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all ${
               currentView === 'draw'
                 ? 'bg-[#2739e5] text-white shadow-sm'
                 : 'bg-[#2739e5]/10 text-[#2739e5] hover:bg-[#2739e5] hover:text-white'
             }`}
           >
-            dibujar
+            <PenTool className="w-3.5 h-3.5" />
+            <span>dibujar</span>
           </button>
 
           <button
@@ -117,14 +116,16 @@ export const Header: React.FC<HeaderProps> = ({
               currentView === 'gallery' ? 'text-[#2739e5]' : 'text-gray-500 hover:text-[#2739e5]'
             }`}
           >
-            doodles
+            galería
           </button>
 
           <button
             onClick={() => setView('admin-login')}
-            className="text-xs text-gray-400 hover:text-gray-800 transition-colors uppercase tracking-wider font-tech"
+            className="text-xs text-gray-400 hover:text-gray-800 transition-colors uppercase tracking-wider font-tech flex items-center gap-1"
+            title="Acceso Admin"
           >
-            admin
+            <Shield className="w-3.5 h-3.5" />
+            <span>admin</span>
           </button>
         </nav>
       </div>

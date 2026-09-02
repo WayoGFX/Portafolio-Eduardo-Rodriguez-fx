@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { ZoomIn, Camera, MapPin } from 'lucide-react';
 import { PhotoProject } from '../types';
 import { LightboxMedia } from './LightboxModal';
 
@@ -73,23 +74,33 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({
 
             {/* Subtle Gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
-              <span className="text-[11px] font-tech uppercase tracking-wider text-blue-300 font-bold mb-1">
-                {photo.category} {photo.location && `· ${photo.location}`}
+              <span className="text-[11px] font-tech uppercase tracking-wider text-blue-300 font-bold mb-1 flex items-center gap-1.5">
+                <span>{photo.category}</span>
+                {photo.location && (
+                  <>
+                    <span>•</span>
+                    <span className="flex items-center gap-0.5">
+                      <MapPin className="w-3 h-3" />
+                      {photo.location}
+                    </span>
+                  </>
+                )}
               </span>
               <h4 className="font-editorial text-lg font-bold leading-snug">
                 {photo.title}
               </h4>
               {photo.gear && (
-                <p className="text-xs text-gray-300 mt-1 font-tech">
-                  📷 {photo.gear}
+                <p className="text-xs text-gray-300 mt-1 font-tech flex items-center gap-1">
+                  <Camera className="w-3 h-3 text-blue-300" />
+                  <span>{photo.gear}</span>
                 </p>
               )}
             </div>
 
             {/* Corner Badge */}
             <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-              <span className="w-8 h-8 rounded-full bg-white text-[#2739e5] flex items-center justify-center shadow-lg font-bold text-sm">
-                🔍
+              <span className="w-8 h-8 rounded-full bg-white text-[#2739e5] flex items-center justify-center shadow-lg">
+                <ZoomIn className="w-4 h-4" />
               </span>
             </div>
           </motion.div>
@@ -100,4 +111,3 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({
 };
 
 export default PhotoGallery;
-

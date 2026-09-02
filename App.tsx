@@ -12,6 +12,7 @@ import Gallery from './components/Gallery';
 import AdminLogin from './components/AdminLogin';
 import Footer from './components/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowLeft, PenTool, Images, X, Shield, Sparkles } from 'lucide-react';
 
 const App: React.FC = () => {
   const [view, setView] = useState<View>('portfolio');
@@ -179,20 +180,22 @@ const App: React.FC = () => {
             <div className="flex justify-between items-center mb-6">
               <button
                 onClick={() => handleSetView('portfolio')}
-                className="flex items-center gap-2 text-sm font-bold text-[#2739e5] hover:text-[#1a28bf] bg-white border border-gray-200 px-4 py-2 rounded-xl shadow-sm"
+                className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#2739e5] hover:text-[#1a28bf] bg-white border border-gray-200 px-4 py-2 rounded-xl shadow-sm"
               >
-                ← Volver al Portafolio
+                <ArrowLeft className="w-4 h-4" />
+                <span>Volver al Portafolio</span>
               </button>
               <button
                 onClick={() => handleSetView('gallery')}
-                className="text-xs font-tech text-gray-500 hover:text-black"
+                className="text-xs font-tech text-gray-500 hover:text-black flex items-center gap-1"
               >
-                Ver Galería
+                <Images className="w-3.5 h-3.5" />
+                <span>Ver Galería</span>
               </button>
             </div>
 
             <div className="flex flex-col items-center">
-              <h2 className="text-4xl font-handwritten text-[#2d241e] mb-4 text-center font-bold">
+              <h2 className="text-4xl font-handwritten text-[#2d241e] mb-2 text-center font-bold">
                 ¡Crea un dibujo para Eduardo!
               </h2>
               <p className="text-xs text-gray-500 mb-6 text-center font-tech">
@@ -216,15 +219,17 @@ const App: React.FC = () => {
             <div className="flex justify-between items-center mb-6">
               <button
                 onClick={() => handleSetView('portfolio')}
-                className="flex items-center gap-2 text-sm font-bold text-[#2739e5] hover:text-[#1a28bf] bg-white border border-gray-200 px-4 py-2 rounded-xl shadow-sm"
+                className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#2739e5] hover:text-[#1a28bf] bg-white border border-gray-200 px-4 py-2 rounded-xl shadow-sm"
               >
-                ← Volver al Portafolio
+                <ArrowLeft className="w-4 h-4" />
+                <span>Volver al Portafolio</span>
               </button>
               <button
                 onClick={() => handleSetView('draw')}
-                className="bg-[#2739e5] text-white px-4 py-2 rounded-xl text-xs font-bold shadow-md hover:bg-[#1a28bf]"
+                className="bg-[#2739e5] text-white px-4 py-2 rounded-xl text-xs font-bold shadow-md hover:bg-[#1a28bf] flex items-center gap-1.5"
               >
-                Dibujar Nuevo
+                <PenTool className="w-3.5 h-3.5" />
+                <span>Dibujar Nuevo</span>
               </button>
             </div>
 
@@ -313,15 +318,13 @@ const MobileNav: React.FC<MobileNavProps> = ({
           <div className="flex justify-between items-center mb-8 pb-4 border-b border-gray-200">
             <img src="/logowayo.svg" alt="Wayo" className="h-8 w-auto object-contain" />
             <button onClick={onClose} className="p-2 -mr-2 text-gray-700 hover:text-black">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
+              <X className="w-6 h-6" />
             </button>
           </div>
 
           <motion.nav
             variants={{ visible: { transition: { staggerChildren: 0.07 } } }}
-            className="flex flex-col gap-5"
+            className="flex flex-col gap-4 text-sm"
           >
             <motion.button
               variants={itemVariants}
@@ -329,7 +332,7 @@ const MobileNav: React.FC<MobileNavProps> = ({
                 setView('portfolio');
                 onClose();
               }}
-              className="w-full text-lg font-bold text-left text-[#2739e5]"
+              className="w-full text-base font-bold text-left text-[#2739e5]"
             >
               Inicio / Portafolio
             </motion.button>
@@ -339,7 +342,7 @@ const MobileNav: React.FC<MobileNavProps> = ({
                 scrollToSection('about');
                 onClose();
               }}
-              className="w-full text-base font-medium text-left text-gray-800"
+              className="w-full font-medium text-left text-gray-800"
             >
               Sobre Mí
             </motion.button>
@@ -349,7 +352,7 @@ const MobileNav: React.FC<MobileNavProps> = ({
                 scrollToSection('experience');
                 onClose();
               }}
-              className="w-full text-base font-medium text-left text-gray-800"
+              className="w-full font-medium text-left text-gray-800"
             >
               Experiencia
             </motion.button>
@@ -359,7 +362,7 @@ const MobileNav: React.FC<MobileNavProps> = ({
                 scrollToSection('works');
                 onClose();
               }}
-              className="w-full text-base font-medium text-left text-gray-800"
+              className="w-full font-medium text-left text-gray-800"
             >
               Trabajos (Video, Diseño, Foto)
             </motion.button>
@@ -369,21 +372,23 @@ const MobileNav: React.FC<MobileNavProps> = ({
                 scrollToSection('doodles');
                 onClose();
               }}
-              className="w-full text-base font-medium text-left text-gray-800"
+              className="w-full font-medium text-left text-gray-800 flex items-center gap-1.5"
             >
-              ✨ Cuadro de Doodles
+              <Sparkles className="w-4 h-4 text-[#2739e5]" />
+              <span>Cuadro de Doodles</span>
             </motion.button>
 
-            <div className="pt-4 border-t border-gray-200 flex flex-col gap-3">
+            <div className="pt-4 border-t border-gray-200 flex flex-col gap-2.5">
               <motion.button
                 variants={itemVariants}
                 onClick={() => {
                   setView('draw');
                   onClose();
                 }}
-                className="w-full bg-[#2739e5] text-white py-3 rounded-xl font-bold text-sm text-center shadow-md"
+                className="w-full bg-[#2739e5] text-white py-2.5 rounded-xl font-bold text-xs text-center shadow-md flex items-center justify-center gap-1.5"
               >
-                ✏️ Dibujar un Doodle
+                <PenTool className="w-3.5 h-3.5" />
+                <span>Dibujar un Doodle</span>
               </motion.button>
               <motion.button
                 variants={itemVariants}
@@ -391,9 +396,10 @@ const MobileNav: React.FC<MobileNavProps> = ({
                   setView('gallery');
                   onClose();
                 }}
-                className="w-full bg-white border border-gray-300 text-gray-800 py-2.5 rounded-xl font-bold text-sm text-center"
+                className="w-full bg-white border border-gray-300 text-gray-800 py-2 rounded-xl font-bold text-xs text-center flex items-center justify-center gap-1.5"
               >
-                Ver Galería
+                <Images className="w-3.5 h-3.5 text-gray-600" />
+                <span>Ver Galería</span>
               </motion.button>
             </div>
           </motion.nav>
@@ -405,9 +411,10 @@ const MobileNav: React.FC<MobileNavProps> = ({
               setView('admin-login');
               onClose();
             }}
-            className="hover:text-black uppercase"
+            className="hover:text-black uppercase flex items-center gap-1"
           >
-            {isAdmin ? 'Admin Activo' : 'Acceso Admin'}
+            <Shield className="w-3 h-3" />
+            <span>{isAdmin ? 'Admin Activo' : 'Acceso Admin'}</span>
           </button>
           <span>Wayo 2026</span>
         </div>

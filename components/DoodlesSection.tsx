@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { PenTool, LayoutGrid, Sparkles } from 'lucide-react';
 import { AnimalState, Position, Drawing } from '../types';
 import { getDrawings } from '../services/api';
 import Animal from './Animal';
@@ -106,21 +107,22 @@ export const DoodlesSection: React.FC<DoodlesSectionProps> = ({
   const safeZoneHeight = worldDims.height * (1 - 2 * framePaddingPercentage);
 
   return (
-    <section id="doodles" className="relative py-16 px-4 sm:px-6 max-w-6xl mx-auto">
-      <div className="bg-[#FAF8F5] border-2 border-[#2739e5]/30 rounded-3xl md:rounded-[36px] p-6 sm:p-12 shadow-xl overflow-hidden">
+    <section id="doodles" className="relative py-12 md:py-18 px-4 sm:px-6 max-w-6xl mx-auto">
+      <div className="bg-[#FAF8F5] border-2 border-[#2739e5]/30 rounded-3xl md:rounded-[36px] p-6 sm:p-10 shadow-lg overflow-hidden">
         {/* Header */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pb-8 border-b border-gray-200">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pb-6 border-b border-gray-200">
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-tech text-xs bg-[#2739e5] text-white px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider">
-                Zona Interactiva
+              <span className="font-tech text-xs bg-[#2739e5] text-white px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider flex items-center gap-1">
+                <Sparkles className="w-3 h-3" />
+                <span>Zona Interactiva</span>
               </span>
               <span className="text-xs text-gray-500 font-tech">Wayo Doodles</span>
             </div>
             <h2 className="font-serif-display text-3xl sm:text-5xl text-[#2739e5] mt-1">
               ¡Dibuja un <span className="font-handwritten text-4xl sm:text-6xl text-[#121212] not-italic">Doodle!</span>
             </h2>
-            <p className="text-sm text-gray-600 mt-1 max-w-xl">
+            <p className="text-xs sm:text-sm text-gray-600 mt-1 max-w-xl">
               Deja tu firma o dibujo interactivo. Aparecerá en movimiento en el cuadro en vivo de la comunidad.
             </p>
           </div>
@@ -128,25 +130,26 @@ export const DoodlesSection: React.FC<DoodlesSectionProps> = ({
           <div className="flex items-center gap-3">
             <button
               onClick={onOpenDraw}
-              className="bg-[#2739e5] hover:bg-[#1a28bf] text-white font-bold py-3 px-6 rounded-2xl text-sm shadow-md transition-all transform active:scale-95 flex items-center gap-2"
+              className="bg-[#2739e5] hover:bg-[#1a28bf] text-white font-bold py-2.5 px-5 rounded-2xl text-xs sm:text-sm shadow-md transition-all transform active:scale-95 flex items-center gap-2"
             >
-              <span>✏️</span>
+              <PenTool className="w-4 h-4" />
               <span>Dibujar Ahora</span>
             </button>
             <button
               onClick={onOpenGallery}
-              className="bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 font-bold py-3 px-5 rounded-2xl text-sm transition-all shadow-sm"
+              className="bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 font-bold py-2.5 px-4 rounded-2xl text-xs sm:text-sm transition-all shadow-sm flex items-center gap-1.5"
             >
-              Ver Galería
+              <LayoutGrid className="w-4 h-4 text-gray-600" />
+              <span>Ver Galería</span>
             </button>
           </div>
         </div>
 
         {/* The Live Interactive Frame */}
-        <div className="mt-8 flex flex-col items-center">
+        <div className="mt-6 flex flex-col items-center">
           <div
             ref={worldRef}
-            className="relative w-full aspect-video max-w-3xl bg-cover bg-center bg-no-repeat rounded-2xl overflow-hidden shadow-2xl border-4 border-white"
+            className="relative w-full aspect-video max-w-3xl bg-cover bg-center bg-no-repeat rounded-2xl overflow-hidden shadow-xl border-4 border-white"
             style={{ backgroundImage: "url('/fondogif.webp')" }}
           >
             {/* Active Moving Doodles */}
@@ -169,7 +172,7 @@ export const DoodlesSection: React.FC<DoodlesSectionProps> = ({
             </AnimatePresence>
 
             {animals.length === 0 && (
-              <div className="absolute inset-0 flex items-center justify-center bg-black/40 text-white text-sm font-bold">
+              <div className="absolute inset-0 flex items-center justify-center bg-black/40 text-white text-xs sm:text-sm font-bold">
                 ¡Sé el primero en dejar un dibujo!
               </div>
             )}
@@ -181,4 +184,3 @@ export const DoodlesSection: React.FC<DoodlesSectionProps> = ({
 };
 
 export default DoodlesSection;
-

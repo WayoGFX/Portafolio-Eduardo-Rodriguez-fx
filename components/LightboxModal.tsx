@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { X } from 'lucide-react';
 
 export interface LightboxMedia {
   type: 'video-vertical' | 'video-horizontal' | 'image';
@@ -64,12 +65,10 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center transition-colors border border-white/20"
+            className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center transition-colors border border-white/20"
             aria-label="Cerrar modal"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
+            <X className="w-5 h-5" />
           </button>
 
           {/* Media Display Column */}
@@ -141,14 +140,14 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({
               </h3>
 
               {media.description && (
-                <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mb-4">
                   {media.description}
                 </p>
               )}
 
-              <div className="space-y-2 text-xs text-gray-400 pt-2 border-t border-white/10 font-tech">
+              <div className="space-y-1.5 text-xs text-gray-400 pt-2 border-t border-white/10 font-tech">
                 {media.client && (
-                  <p><strong className="text-white">Cliente/Proyecto:</strong> {media.client}</p>
+                  <p><strong className="text-white">Cliente:</strong> {media.client}</p>
                 )}
                 {media.year && (
                   <p><strong className="text-white">Año:</strong> {media.year}</p>
@@ -169,7 +168,7 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({
             <div className="pt-6 mt-4 border-t border-white/10">
               <button
                 onClick={onClose}
-                className="w-full bg-[#2739e5] hover:bg-[#1a28bf] text-white py-2.5 px-4 rounded-xl font-bold text-sm transition-colors text-center"
+                className="w-full bg-[#2739e5] hover:bg-[#1a28bf] text-white py-2.5 px-4 rounded-xl font-bold text-xs sm:text-sm transition-colors text-center"
               >
                 Cerrar vista
               </button>
@@ -182,4 +181,3 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({
 };
 
 export default LightboxModal;
-

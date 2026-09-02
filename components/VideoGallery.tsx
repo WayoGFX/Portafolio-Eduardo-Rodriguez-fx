@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Play, Smartphone, MonitorPlay, Layers } from 'lucide-react';
 import { VideoProject } from '../types';
 import { LightboxMedia } from './LightboxModal';
 import RetroStar from './RetroStar';
@@ -35,44 +36,47 @@ export const VideoGallery: React.FC<VideoGalleryProps> = ({
   };
 
   return (
-    <div className="space-y-16">
+    <div className="space-y-14">
       {/* Sub-filters for video types */}
-      <div className="flex justify-center items-center gap-2 sm:gap-4">
+      <div className="flex justify-center items-center gap-2 sm:gap-3">
         <button
           onClick={() => setVideoFilter('all')}
-          className={`px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all ${
+          className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-all ${
             videoFilter === 'all'
               ? 'bg-[#2739e5] text-white shadow-md'
               : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
           }`}
         >
-          Todos los Videos
+          <Layers className="w-3.5 h-3.5" />
+          <span>Todos los Videos</span>
         </button>
         <button
           onClick={() => setVideoFilter('vertical')}
-          className={`px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all ${
+          className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-all ${
             videoFilter === 'vertical'
               ? 'bg-[#2739e5] text-white shadow-md'
               : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
           }`}
         >
-          Reels & Shorts
+          <Smartphone className="w-3.5 h-3.5" />
+          <span>Reels & Shorts (Vertical)</span>
         </button>
         <button
           onClick={() => setVideoFilter('horizontal')}
-          className={`px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all ${
+          className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-all ${
             videoFilter === 'horizontal'
               ? 'bg-[#2739e5] text-white shadow-md'
               : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
           }`}
         >
-          🎬 Proyectos Horizontales
+          <MonitorPlay className="w-3.5 h-3.5" />
+          <span>Proyectos 16:9</span>
         </button>
       </div>
 
       {/* SECTION 1: Vertical Videos (Reels / TikTok / Shorts) - 3 in 3 layout matching Reference Image 5 */}
       {(videoFilter === 'all' || videoFilter === 'vertical') && (
-        <div className="bg-[#2739e5] rounded-3xl md:rounded-[36px] p-6 sm:p-10 text-white shadow-2xl relative overflow-hidden">
+        <div className="bg-[#2739e5] rounded-3xl md:rounded-[36px] p-6 sm:p-10 text-white shadow-xl relative overflow-hidden">
           {/* Subtle star overlay */}
           <div className="absolute top-4 right-4 opacity-20 pointer-events-none">
             <RetroStar size={100} color="#FFFFFF" variant="pixel" />
@@ -101,7 +105,7 @@ export const VideoGallery: React.FC<VideoGalleryProps> = ({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                whileHover={{ y: -8 }}
+                whileHover={{ y: -6 }}
                 onClick={() => handlePlayVideo(video)}
                 className="group relative aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl cursor-pointer border-2 border-white/20 hover:border-white transition-all"
               >
@@ -131,9 +135,7 @@ export const VideoGallery: React.FC<VideoGalleryProps> = ({
                     whileHover={{ scale: 1.15 }}
                     className="w-14 h-14 rounded-full bg-white text-[#2739e5] flex items-center justify-center shadow-2xl group-hover:bg-[#2739e5] group-hover:text-white transition-colors"
                   >
-                    <svg className="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
+                    <Play className="w-6 h-6 ml-0.5 fill-current" />
                   </motion.div>
                 </div>
 
@@ -159,8 +161,11 @@ export const VideoGallery: React.FC<VideoGalleryProps> = ({
 
       {/* SECTION 2: Horizontal Videos (16:9) - 1 at a time featured showcase */}
       {(videoFilter === 'all' || videoFilter === 'horizontal') && (
-        <div className="space-y-10">
+        <div className="space-y-8">
           <div className="text-center max-w-xl mx-auto">
+            <span className="font-tech text-xs text-[#2739e5] tracking-widest uppercase bg-[#2739e5]/10 px-3 py-1 rounded-full font-bold">
+              Formato Horizontal 16:9
+            </span>
             <h3 className="font-serif-display text-3xl sm:text-4xl text-[#121212] mt-2">
               Producciones & Spots Comerciales
             </h3>
@@ -174,7 +179,7 @@ export const VideoGallery: React.FC<VideoGalleryProps> = ({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.15 }}
-                className="bg-white border-2 border-gray-200 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all"
+                className="bg-white border-2 border-gray-200 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
               >
                 {/* Horizontal Player / Thumbnail */}
                 <div 
@@ -198,9 +203,7 @@ export const VideoGallery: React.FC<VideoGalleryProps> = ({
                   {/* Play Overlay */}
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
                     <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#2739e5] text-white flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
-                      <svg className="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
+                      <Play className="w-8 h-8 ml-1 fill-current" />
                     </div>
                   </div>
                 </div>
@@ -231,12 +234,10 @@ export const VideoGallery: React.FC<VideoGalleryProps> = ({
                   <div className="flex-shrink-0">
                     <button
                       onClick={() => handlePlayVideo(video)}
-                      className="w-full sm:w-auto bg-[#2739e5] hover:bg-[#1a28bf] text-white px-6 py-3 rounded-xl font-bold text-sm shadow-md transition-colors flex items-center justify-center gap-2"
+                      className="w-full sm:w-auto bg-[#2739e5] hover:bg-[#1a28bf] text-white px-6 py-3 rounded-xl font-bold text-xs sm:text-sm shadow-md transition-colors flex items-center justify-center gap-2"
                     >
+                      <Play className="w-4 h-4 fill-current" />
                       <span>Reproducir Video</span>
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                      </svg>
                     </button>
                   </div>
                 </div>
@@ -250,4 +251,3 @@ export const VideoGallery: React.FC<VideoGalleryProps> = ({
 };
 
 export default VideoGallery;
-

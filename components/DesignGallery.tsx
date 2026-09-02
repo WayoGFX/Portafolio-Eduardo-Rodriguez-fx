@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { ZoomIn, Tag } from 'lucide-react';
 import { DesignProject } from '../types';
 import { LightboxMedia } from './LightboxModal';
 
@@ -89,8 +90,8 @@ export const DesignGallery: React.FC<DesignGalleryProps> = ({
 
             {/* Corner Badge */}
             <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-              <span className="w-8 h-8 rounded-full bg-white text-[#2739e5] flex items-center justify-center shadow-lg font-bold text-sm">
-                🔍
+              <span className="w-8 h-8 rounded-full bg-white text-[#2739e5] flex items-center justify-center shadow-lg">
+                <ZoomIn className="w-4 h-4" />
               </span>
             </div>
           </motion.div>
@@ -101,4 +102,3 @@ export const DesignGallery: React.FC<DesignGalleryProps> = ({
 };
 
 export default DesignGallery;
-

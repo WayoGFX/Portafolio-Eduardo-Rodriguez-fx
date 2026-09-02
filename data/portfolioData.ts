@@ -5,7 +5,7 @@ export const personalInfo = {
   nickname: 'Wayo',
   tagline: 'Editor Audiovisual, Videógrafo & Diseñador',
   year: '2026',
-  avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80', // Placeholder de alta calidad
+  avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
   bioParagraphs: [
     '¡Hola! Soy Eduardo Rodríguez (Wayo), editor audiovisual y creador de contenido con pasión por contar historias visuales dinámicas e impactantes.',
     'Especializado en montaje rítmico, narrativa para redes sociales, corrección de color y diseño gráfico. Combino precisión técnica con una visión creativa fresca para conectar marcas y creadores con su audiencia.'
@@ -14,7 +14,7 @@ export const personalInfo = {
 
 export const contactData: ContactInfo = {
   phone: '+503 7326 4065',
-  phoneRaw: '50370000000',
+  phoneRaw: '50373264065',
   instagram: '@wayo.rodriguez',
   instagramUrl: 'https://www.instagram.com/wayo.rodriguez',
   youtubeUrl: 'https://www.youtube.com/@wayo.rodriguez',
@@ -171,7 +171,7 @@ export const videosData: VideoProject[] = [
     category: 'Commercial',
     type: 'horizontal',
     thumbnailUrl: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&h=675&q=80',
-    embedUrl: 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ', // Placeholder de YouTube
+    embedUrl: 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ',
     client: 'Wayo Audiovisual',
     year: '2025',
     role: 'Dirección, Cámara, Edición & Color',
@@ -310,4 +310,3 @@ export const photosData: PhotoProject[] = [
     gear: 'Sony A7IV + 24-70mm f/2.8'
   }
 ];
-
