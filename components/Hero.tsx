@@ -34,7 +34,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
       </div>
 
       {/* Main Center Typography & Branding */}
-      <div className="relative my-auto flex flex-col items-center justify-center text-center py-8">
+      <div className="relative my-auto flex flex-col items-center justiEfy-center text-center py-8">
         {/* Floating Decorative Pixel Stars */}
         <div className="absolute -top-10 -right-6 md:-top-14 md:-right-14 z-0">
           <RetroStar size={64} color="#2739e5" variant="pixel" animated />
@@ -60,7 +60,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
           </div>
 
           <h1 className="font-serif-display text-6xl sm:text-7xl md:text-9xl text-[#2739e5] tracking-tight leading-none mt-2">
-            Porto<span className="font-editorial italic font-normal text-[#121212]">folio</span>
+            Eduardo <span className="font-editorial italic font-normal text-[#121212]">Rodríguez</span>
           </h1>
 
           {/* Pill Badge */}
@@ -70,7 +70,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-6 inline-flex items-center gap-2 bg-[#2739e5] text-white px-6 py-2 rounded-full text-xs sm:text-sm font-editorial font-medium shadow-md hover:bg-[#1a28bf] transition-colors"
           >
-            <span>Selected Works</span>
+            <span>Portafolio</span>
             <span className="text-xs opacity-75">•</span>
             <span className="text-xs font-tech">{personalInfo.year}</span>
           </motion.div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ZoomIn, Camera, MapPin } from 'lucide-react';
+import { ZoomIn, Camera, MapPin, Layers } from 'lucide-react';
 import { PhotoProject } from '../types';
 import { LightboxMedia } from './LightboxModal';
 
@@ -15,7 +15,11 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
-  const categories = ['all', 'Portrait', 'Street', 'Product', 'Event'];
+  const categories = [
+    'all',
+    'Social Events',
+    'Lighting & Flash'
+  ];
 
   const filteredPhotos = selectedCategory === 'all'
     ? photos
@@ -25,11 +29,13 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({
     onOpenLightbox({
       type: 'image',
       src: photo.imageUrl,
+      galleryImages: photo.images && photo.images.length > 0 ? photo.images : [photo.imageUrl],
       title: photo.title,
-      subtitle: photo.category,
-      description: `${photo.location || ''} ${photo.gear ? `· ${photo.gear}` : ''}`,
+      subtitle: photo.category === 'Social Events' ? 'Bodas & Cobertura Social' : photo.category,
+      description: photo.description || `${photo.location || ''} ${photo.gear ? `· ${photo.gear}` : ''}`,
+      client: photo.location,
       year: photo.year,
-      tags: [photo.category, photo.location || ''].filter(Boolean)
+      tags: [photo.category === 'Social Events' ? 'Boda' : photo.category, photo.location || ''].filter(Boolean)
     });
   };
 
@@ -37,19 +43,36 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({
     <div className="space-y-8">
       {/* Category Filter Pills */}
       <div className="flex flex-wrap justify-center items-center gap-2">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setSelectedCategory(cat)}
-            className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
-              selectedCategory === cat
-                ? 'bg-[#2739e5] text-white shadow-md'
-                : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
-            }`}
-          >
-            {cat === 'all' ? 'Todas las Fotos' : cat}
-          </button>
-        ))}
+        <button
+          onClick={() => setSelectedCategory('all')}
+          className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
+            selectedCategory === 'all'
+              ? 'bg-[#2739e5] text-white shadow-md'
+              : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+          }`}
+        >
+          Todos los Álbumes ({photos.length})
+        </button>
+        <button
+          onClick={() => setSelectedCategory('Social Events')}
+          className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
+            selectedCategory === 'Social Events'
+              ? 'bg-[#2739e5] text-white shadow-md'
+              : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+          }`}
+        >
+          Bodas & Eventos Sociales
+        </button>
+        <button
+          onClick={() => setSelectedCategory('Lighting & Flash')}
+          className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
+            selectedCategory === 'Lighting & Flash'
+              ? 'bg-[#2739e5] text-white shadow-md'
+              : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+          }`}
+        >
+          Iluminación & Flash
+        </button>
       </div>
 
       {/* Grid of Photos */}
@@ -72,10 +95,18 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({
               loading="lazy"
             />
 
+            {/* Top Multi-image indicator badge */}
+            {photo.images && photo.images.length > 1 && (
+              <div className="absolute top-3 left-3 bg-black/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-full text-[10px] font-tech flex items-center gap-1 z-10 border border-white/10">
+                <Layers className="w-3 h-3 text-[#2739e5]" />
+                <span>{photo.images.length} fotos</span>
+              </div>
+            )}
+
             {/* Subtle Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
               <span className="text-[11px] font-tech uppercase tracking-wider text-blue-300 font-bold mb-1 flex items-center gap-1.5">
-                <span>{photo.category}</span>
+                <span>{photo.category === 'Social Events' ? 'Bodas' : photo.category}</span>
                 {photo.location && (
                   <>
                     <span>•</span>
@@ -98,7 +129,7 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({
             </div>
 
             {/* Corner Badge */}
-            <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+            <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
               <span className="w-8 h-8 rounded-full bg-white text-[#2739e5] flex items-center justify-center shadow-lg">
                 <ZoomIn className="w-4 h-4" />
               </span>

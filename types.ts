@@ -61,11 +61,12 @@ export interface ExperienceItem {
 export interface VideoProject {
   id: string;
   title: string;
-  category: 'Reels / Shorts' | 'Commercial' | 'Music Video' | 'Documentary' | 'Corporate' | 'Motion';
+  category: string;
   type: 'vertical' | 'horizontal';
   thumbnailUrl: string;
   videoUrl?: string;
   embedUrl?: string;
+  externalUrl?: string;
   client?: string;
   year?: string;
   role?: string;
@@ -75,21 +76,25 @@ export interface VideoProject {
 export interface DesignProject {
   id: string;
   title: string;
-  category: 'Social Media' | 'Branding' | 'Poster' | 'Thumbnail' | 'Editorial';
-  imageUrl: string;
+  category: 'Branding & UI' | 'Social Media' | 'Flyers & Posters' | 'Imprenta & Editorial';
+  imageUrl: string; // Portada principal
+  images?: string[]; // Varias imágenes del proyecto
   aspectRatio?: 'square' | 'portrait' | 'landscape';
   client?: string;
   year?: string;
   description?: string;
+  tools?: string[];
 }
 
 export interface PhotoProject {
   id: string;
   title: string;
-  category: 'Portrait' | 'Event' | 'Street' | 'Product' | 'Commercial';
+  category: 'Social Events' | 'Portrait & Fashion' | 'Architecture & Corporate' | 'Lighting & Flash';
   imageUrl: string;
+  images?: string[];
   year?: string;
   location?: string;
   gear?: string;
+  description?: string;
 }
 

@@ -6,7 +6,7 @@ import Hero from './components/Hero';
 import AboutMe from './components/AboutMe';
 import Experience from './components/Experience';
 import WorksSection from './components/WorksSection';
-import DoodlesSection from './components/DoodlesSection';
+import Live from './components/Live';
 import Canvas from './components/Canvas';
 import Gallery from './components/Gallery';
 import AdminLogin from './components/AdminLogin';
@@ -58,11 +58,7 @@ const App: React.FC = () => {
       setDrawings(newDrawings);
       localStorage.setItem('miaudoodles_drawings', JSON.stringify(newDrawings));
       await updateDrawings(newDrawings);
-      setView('portfolio');
-      setTimeout(() => {
-        const doodleSection = document.getElementById('doodles');
-        if (doodleSection) doodleSection.scrollIntoView({ behavior: 'smooth' });
-      }, 300);
+      setView('live');
     } catch (e: any) {
       console.error('Error guardando el dibujo y subiendo a la nube:', e);
       alert(`¡Error! No se pudo guardar el dibujo.\n\n${e.message}`);
@@ -137,7 +133,7 @@ const App: React.FC = () => {
 
       {/* Views Orchestrator */}
       <AnimatePresence mode="wait">
-        {/* 1. Main Portfolio View */}
+        {/* 1. Main Portfolio View (Doodles removed from bottom as requested) */}
         {view === 'portfolio' && (
           <motion.main
             key="portfolio-view"
@@ -158,16 +154,50 @@ const App: React.FC = () => {
 
             {/* Works Section (Video, Design, Photo) */}
             <WorksSection />
-
-            {/* Doodles Interactive Section */}
-            <DoodlesSection
-              onOpenDraw={() => handleSetView('draw')}
-              onOpenGallery={() => handleSetView('gallery')}
-            />
           </motion.main>
         )}
 
-        {/* 2. Full Draw View */}
+        {/* 2. Interactive Live Doodles View (Dedicated Interactive Frame) */}
+        {view === 'live' && (
+          <motion.main
+            key="live-view"
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.96 }}
+            transition={{ duration: 0.3 }}
+            className="max-w-5xl mx-auto px-4 py-8 flex-1 w-full"
+          >
+            <div className="flex justify-between items-center mb-6">
+              <button
+                onClick={() => handleSetView('portfolio')}
+                className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#2739e5] hover:text-[#1a28bf] bg-white border border-gray-200 px-4 py-2 rounded-xl shadow-sm"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                <span>Volver al Portafolio</span>
+              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => handleSetView('draw')}
+                  className="bg-[#2739e5] text-white px-4 py-2 rounded-xl text-xs font-bold shadow-md hover:bg-[#1a28bf] flex items-center gap-1.5"
+                >
+                  <PenTool className="w-3.5 h-3.5" />
+                  <span>Dibujar Doodle</span>
+                </button>
+                <button
+                  onClick={() => handleSetView('gallery')}
+                  className="bg-white border border-gray-300 text-gray-800 px-3.5 py-2 rounded-xl text-xs font-bold shadow-sm hover:bg-gray-100 flex items-center gap-1"
+                >
+                  <Images className="w-3.5 h-3.5 text-gray-600" />
+                  <span>Galería</span>
+                </button>
+              </div>
+            </div>
+
+            <Live setView={handleSetView} />
+          </motion.main>
+        )}
+
+        {/* 3. Full Draw View */}
         {view === 'draw' && (
           <motion.main
             key="draw-view"
@@ -175,7 +205,7 @@ const App: React.FC = () => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.96 }}
             transition={{ duration: 0.3 }}
-            className="max-w-5xl mx-auto px-4 py-8 flex-1"
+            className="max-w-5xl mx-auto px-4 py-8 flex-1 w-full"
           >
             <div className="flex justify-between items-center mb-6">
               <button
@@ -199,14 +229,14 @@ const App: React.FC = () => {
                 ¡Crea un dibujo para Eduardo!
               </h2>
               <p className="text-xs text-gray-500 mb-6 text-center font-tech">
-                Tu creación cobrará vida en el cuadro interactivo del portafolio.
+                Tu creación cobrará vida en el cuadro interactivo de doodles.
               </p>
               <Canvas onSave={saveDrawing} isSaving={isUploading} />
             </div>
           </motion.main>
         )}
 
-        {/* 3. Doodles Gallery View */}
+        {/* 4. Doodles Gallery View */}
         {view === 'gallery' && (
           <motion.main
             key="gallery-view"
@@ -214,7 +244,7 @@ const App: React.FC = () => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.96 }}
             transition={{ duration: 0.3 }}
-            className="max-w-5xl mx-auto px-4 py-8 flex-1"
+            className="max-w-5xl mx-auto px-4 py-8 flex-1 w-full"
           >
             <div className="flex justify-between items-center mb-6">
               <button
@@ -245,7 +275,7 @@ const App: React.FC = () => {
           </motion.main>
         )}
 
-        {/* 4. Admin Login View */}
+        {/* 5. Admin Login View */}
         {view === 'admin-login' && (
           <motion.main
             key="login-view"
@@ -366,19 +396,19 @@ const MobileNav: React.FC<MobileNavProps> = ({
             >
               Trabajos (Video, Diseño, Foto)
             </motion.button>
-            <motion.button
-              variants={itemVariants}
-              onClick={() => {
-                scrollToSection('doodles');
-                onClose();
-              }}
-              className="w-full font-medium text-left text-gray-800 flex items-center gap-1.5"
-            >
-              <Sparkles className="w-4 h-4 text-[#2739e5]" />
-              <span>Cuadro de Doodles</span>
-            </motion.button>
 
             <div className="pt-4 border-t border-gray-200 flex flex-col gap-2.5">
+              <motion.button
+                variants={itemVariants}
+                onClick={() => {
+                  setView('live');
+                  onClose();
+                }}
+                className="w-full bg-[#FAF8F5] border border-[#2739e5] text-[#2739e5] py-2.5 rounded-xl font-bold text-xs text-center flex items-center justify-center gap-1.5"
+              >
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Cuadro de Doodles en Vivo</span>
+              </motion.button>
               <motion.button
                 variants={itemVariants}
                 onClick={() => {

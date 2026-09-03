@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ZoomIn, Tag } from 'lucide-react';
+import { ZoomIn, Layers } from 'lucide-react';
 import { DesignProject } from '../types';
 import { LightboxMedia } from './LightboxModal';
 
@@ -15,7 +15,13 @@ export const DesignGallery: React.FC<DesignGalleryProps> = ({
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
-  const categories = ['all', 'Branding', 'Thumbnail', 'Poster', 'Social Media', 'Editorial'];
+  const categories = [
+    'all',
+    'Branding & UI',
+    'Social Media',
+    'Flyers & Posters',
+    'Imprenta & Editorial'
+  ];
 
   const filteredDesigns = selectedCategory === 'all'
     ? designs
@@ -25,12 +31,14 @@ export const DesignGallery: React.FC<DesignGalleryProps> = ({
     onOpenLightbox({
       type: 'image',
       src: design.imageUrl,
+      galleryImages: design.images && design.images.length > 0 ? design.images : [design.imageUrl],
       title: design.title,
       subtitle: design.category,
       description: design.description,
       client: design.client,
       year: design.year,
-      tags: [design.category]
+      tags: [design.category],
+      tools: design.tools
     });
   };
 
@@ -48,7 +56,7 @@ export const DesignGallery: React.FC<DesignGalleryProps> = ({
                 : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
             }`}
           >
-            {cat === 'all' ? 'Todos los Diseños' : cat}
+            {cat === 'all' ? 'Todos los Proyectos' : cat}
           </button>
         ))}
       </div>
@@ -73,8 +81,16 @@ export const DesignGallery: React.FC<DesignGalleryProps> = ({
               loading="lazy"
             />
 
+            {/* Top Multi-image indicator badge */}
+            {design.images && design.images.length > 1 && (
+              <div className="absolute top-3 left-3 bg-black/70 backdrop-blur-sm text-white px-2.5 py-1 rounded-full text-[10px] font-tech flex items-center gap-1">
+                <Layers className="w-3 h-3 text-[#2739e5]" />
+                <span>{design.images.length} imágenes</span>
+              </div>
+            )}
+
             {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
               <span className="text-[11px] font-tech uppercase tracking-wider text-blue-300 font-bold mb-1">
                 {design.category}
               </span>
@@ -83,8 +99,17 @@ export const DesignGallery: React.FC<DesignGalleryProps> = ({
               </h4>
               {design.client && (
                 <p className="text-xs text-gray-300 mt-1">
-                  Cliente: {design.client}
+                  Cliente/Proyecto: {design.client}
                 </p>
+              )}
+              {design.tools && (
+                <div className="flex flex-wrap gap-1 mt-2">
+                  {design.tools.map((t, i) => (
+                    <span key={i} className="text-[10px] bg-white/20 px-2 py-0.5 rounded">
+                      {t}
+                    </span>
+                  ))}
+                </div>
               )}
             </div>
 

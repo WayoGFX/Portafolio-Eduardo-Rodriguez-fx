@@ -3,12 +3,13 @@ import { ContactInfo, EducationItem, ToolItem, ExperienceItem, VideoProject, Des
 export const personalInfo = {
   name: 'Eduardo Rodríguez',
   nickname: 'Wayo',
-  tagline: 'Editor Audiovisual, Videógrafo & Diseñador',
+  tagline: 'Editor Audiovisual · Videógrafo · Diseñador Visual',
   year: '2026',
-  avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
+  avatarUrl: '/perfil.jpg',
+  fallbackAvatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
   bioParagraphs: [
-    '¡Hola! Soy Eduardo Rodríguez (Wayo), editor audiovisual y creador de contenido con pasión por contar historias visuales dinámicas e impactantes.',
-    'Especializado en montaje rítmico, narrativa para redes sociales, corrección de color y diseño gráfico. Combino precisión técnica con una visión creativa fresca para conectar marcas y creadores con su audiencia.'
+    '¡Hola! Soy Eduardo Rodríguez (Wayo), videógrafo y editor audiovisual apasionado por transformar historias en piezas dinámicas e impactantes.',
+    'Domino flujos integrales de producción: desde el rodaje, uso de estabilizadores, esquema de luces y drones, hasta la postproducción rítmica en Premiere Pro, corrección de color en DaVinci Resolve (S-Log2/3), diseño de sonido y artes gráficos en Photoshop, Lightroom.'
   ]
 };
 
@@ -22,291 +23,771 @@ export const contactData: ContactInfo = {
   behance: 'wayorodriguez',
   behanceUrl: 'https://www.behance.net',
   email: 'wayorodriguez116@gmail.com',
-  location: 'El Salvador'
+  location: 'San Salvador, El Salvador'
 };
 
 export const educationData: EducationItem[] = [
   {
-    institution: 'Comunicación Audiovisual & Medios Digitales',
-    degree: 'Licenciatura en Comunicación y Producción Audiovisual',
-    period: '2022 - Actualidad',
-    description: 'Enfoque en narrativa cinematográfica, postproducción y dirección de fotografía.'
-  },
-  {
-    institution: 'Especializaciones & Certificaciones',
-    degree: 'Color Grading en DaVinci Resolve & Motion Graphics Avanzado',
-    period: '2023 - 2024',
-    description: 'Flujos de trabajo profesionales de postproducción de video y VFX.'
+    institution: 'Universidad Salvadoreña Alberto Masferrer (USAM)',
+    degree: 'Técnico en Desarrollo de Software (Graduado)',
+    period: '2024 – 2025',
+    description: 'Beca al Mérito Académico — Promedio: 9.56. Enfoque complementario en diseño de interfaces (UI/UX), prototipado visual y desarrollo digital.'
   }
 ];
 
 export const toolsData: ToolItem[] = [
   { id: 'pr', name: 'Premiere Pro', shortCode: 'Pr', bgColor: '#00005B', textColor: '#9999FF' },
-  { id: 'ae', name: 'After Effects', shortCode: 'Ae', bgColor: '#00005B', textColor: '#9999FF' },
   { id: 'dv', name: 'DaVinci Resolve', shortCode: 'Dv', bgColor: '#1E1E24', textColor: '#E54B4B' },
   { id: 'ps', name: 'Photoshop', shortCode: 'Ps', bgColor: '#001E36', textColor: '#31A8FF' },
+  { id: 'lr', name: 'Lightroom', shortCode: 'Lr', bgColor: '#001E36', textColor: '#31A8FF' },
+  { id: 'ae', name: 'After Effects', shortCode: 'Ae', bgColor: '#00005B', textColor: '#9999FF' },
   { id: 'ai', name: 'Illustrator', shortCode: 'Ai', bgColor: '#330000', textColor: '#FF9A00' },
-  { id: 'cc', name: 'CapCut Pro', shortCode: 'Cc', bgColor: '#000000', textColor: '#FFFFFF' }
+  { id: 'cd', name: 'CorelDRAW', shortCode: 'Cd', bgColor: '#004D20', textColor: '#00FF66' },
+  { id: 'cc', name: 'CapCut / Canva', shortCode: 'Cc', bgColor: '#111111', textColor: '#FFFFFF' }
 ];
 
 export const skillsData: string[] = [
-  'Edición de Video',
-  'Motion Graphics',
-  'Color Grading',
-  'Sound Design',
-  'Videografía & Cámara',
-  'Storytelling',
-  'Diseño de Miniaturas',
-  'Fotografía Digital',
-  'Branding para Creadores',
-  'Ritmo & Montaje'
+  'Edición & Montaje Rítmico',
+  'Retoque & Diseño Visual',
+  'Corrección de Color',
+  'Cobertura de Eventos',
+  'Video para Redes & Retención',
+  'Diseño de Interfaces UI & Prototipado',
+];
+
+export const softSkillsData: string[] = [
+  'Visión Creativa & Estética',
+  'Adaptabilidad',
+  'Comunicación & Empatía',
+  'Compromiso con el Detalle',
+  'Resolución Rápida'
 ];
 
 export const experiencesData: ExperienceItem[] = [
   {
     id: 'exp-1',
-    title: 'Lead Video Editor & Content Strategist — Creadores & Marcas',
-    period: '2024 – Presente',
-    roles: ['Editor Principal', 'Motion Designer', 'Colorista'],
-    description: 'Edición y postproducción de más de 150+ piezas en formato corto (Reels, TikToks, Shorts) y formatos largos de YouTube, optimizando retención y dinamismo visual.',
+    title: 'Editor Audiovisual, Videógrafo & Fotógrafo — Pako Castillo',
+    period: 'Feb. 2022 – Actualidad',
+    roles: ['Editor Principal', 'Operador de Cámara', 'Fotógrafo', 'Diseño Promocional'],
+    description: 'Producción de contenido corporativo para clientes de alto nivel como EL ORBE, GEOSIS (conferencias) y AVILÉS CORP (testimoniales y proyectos arquitectónicos terminados). Realización de video reels y banners para VidaDent, reels de bodas para Ode Makeup Artist, y cobertura audiovisual completa de eventos sociales (bodas, XV años, graduaciones y cumpleaños). Gestión de entregables y aprobación directa con clientes.',
     featured: true
   },
   {
     id: 'exp-2',
-    title: 'Videógrafo & Realizador Audiovisual — Producciones Comerciales & Eventos',
-    period: '2023 – 2025',
-    roles: ['Director de Fotografía (DoP)', 'Operador de Cámara', 'Edición Offline/Online'],
-    description: 'Cobertura multicámara de eventos de alto perfil, rodaje de comerciales promocionales para marcas locales e institucionales y etalonaje digital.',
+    title: 'Editor de Video (Subcontratado) — Boré Films · Proyecto Prisma Ingenieros',
+    period: '2023 – 2024',
+    roles: ['Montaje Cinematográfico', 'Edición Offline/Online', 'Color'],
+    description: 'Edición y postproducción de teaser de alto impacto para Prisma Ingenieros para documentar y mostrar proyectos arquitectónicos e infraestructuras emblemáticas como La Puerta del Diablo, adaptando el contenido a los objetivos de comunicación de la marca.',
     featured: true
   },
   {
     id: 'exp-3',
-    title: 'Diseñador Visual & Creador de Contenido — Proyectos Independientes & Branding',
-    period: '2022 – 2024',
-    roles: ['Diseño Gráfico', 'Fotógrafo', 'Animación 2D'],
-    description: 'Desarrollo de identidad visual, cartelería promocional, miniaturas de alto CTR para YouTube y sesiones fotográficas de producto y retrato.',
+    title: 'Diseñador Gráfico & Pre-prensa — Taller de Imprenta & Producción Gráfica',
+    period: '2023',
+    roles: ['Diseño Gráfico', 'Operador Pre-Prensa', 'CorelDRAW'],
+    description: 'Preparación de artes finales y diagramación técnica. Trabajo con medidas reales, calibración de color, líneas de corte y resolución para impresión en diversos sustratos: papel cuché, folcote, lona banner y papel fotográfico.',
     featured: true
   }
 ];
 
 export const videosData: VideoProject[] = [
-  // Videos Verticales (Reels / Shorts) - Mostrados de 3 en 3
+  // ==================== VIDEOS VERTICALES (REELS & SHORTS 9:16) ====================
   {
-    id: 'v-reel-1',
-    title: 'Reel Dinámico: Street Fashion & Ritmo Urbano',
-    category: 'Reels / Shorts',
+    id: 'v-reel-ode-1',
+    title: 'Ode Makeup Artist: Maquillaje de Novias & Preparación Nupcial',
+    category: 'Reels / Bodas & Belleza',
     type: 'vertical',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&h=1066&q=80',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-urban-fashion-model-in-a-neon-tunnel-40714-large.mp4',
-    client: 'Urban Style Brand',
-    year: '2025',
-    role: 'Edición, Color & Sound Design',
-    description: 'Montaje de alto impacto con cortes al ritmo del beat y sound effects inmersivos.'
-  },
-  {
-    id: 'v-reel-2',
-    title: 'Behind the Scenes: Sesión Comercial de Producto',
-    category: 'Reels / Shorts',
-    type: 'vertical',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=600&h=1066&q=80',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-filmmaker-setting-up-his-camera-42868-large.mp4',
-    client: 'Studio Works',
-    year: '2025',
-    role: 'Cámara & Edición Vertical',
-    description: 'Storytelling ágil mostrando el proceso creativo detrás de cámaras.'
-  },
-  {
-    id: 'v-reel-3',
-    title: 'Short Educativo / Miniatura: Motion & Tipografía',
-    category: 'Reels / Shorts',
-    type: 'vertical',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=600&h=1066&q=80',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-young-skater-showing-tricks-in-a-skatepark-42846-large.mp4',
-    client: 'Creator Academy',
-    year: '2025',
-    role: 'Motion Graphics & Subtítulos Cinéticos',
-    description: 'Gráficos animados y subtítulos dinámicos diseñados para maximizar retención.'
-  },
-  {
-    id: 'v-reel-4',
-    title: 'Fitness Workout & Adrenalina',
-    category: 'Reels / Shorts',
-    type: 'vertical',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&h=1066&q=80',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-young-man-exercising-in-the-gym-42686-large.mp4',
-    client: 'Power Gym',
+    thumbnailUrl: '',
+    embedUrl: 'https://www.instagram.com/reel/C1YTGyhM4rc/embed',
+    externalUrl: 'https://www.instagram.com/reel/C1YTGyhM4rc/',
+    client: 'Ode Makeup Artist',
     year: '2024',
-    role: 'Edición Rápida & Speed Ramps',
-    description: 'Transiciones fluidas con speed ramps y corrección de color de alto contraste.'
+    role: 'Videógrafo & Edición para Redes',
+    description: 'Reel promocional destacando la preparación nupcial y maquillaje de novias con estilo elegante y dinámico.'
   },
   {
-    id: 'v-reel-5',
-    title: 'Cocktail Crafting: Visual Storytelling Gastronómico',
-    category: 'Reels / Shorts',
+    id: 'v-reel-ode-2',
+    title: 'Ode Makeup Artist: Estilo & Glamour en Eventos',
+    category: 'Reels / Belleza',
     type: 'vertical',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&h=1066&q=80',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-bartender-pouring-a-drink-into-a-glass-41618-large.mp4',
-    client: 'Lounge Bar & Co.',
-    year: '2024',
-    role: 'Macro Videografía & Montaje ASMR',
-    description: 'Tomas macro con diseño de audio envolvente resaltando texturas y frescura.'
+    thumbnailUrl: '',
+    embedUrl: 'https://www.instagram.com/reel/DYFevKUsakP/embed',
+    externalUrl: 'https://www.instagram.com/reel/DYFevKUsakP/',
+    client: 'Ode Makeup Artist',
+    year: '2026',
+    role: 'Edición de Video & Ritmo',
+    description: 'Contenido audiovisual enfocado en resaltar transformaciones y estilismo para eventos sociales.'
   },
   {
-    id: 'v-reel-6',
-    title: 'Event Highlights: Festival de Música & Luces',
-    category: 'Reels / Shorts',
+    id: 'v-reel-vidadent-1',
+    title: 'VidaDent: Equipamiento & Nuevos Artefactos Odontológicos',
+    category: 'Comercial / Odontología',
     type: 'vertical',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=600&h=1066&q=80',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-concert-crowd-raising-hands-under-colorful-stage-lights-42869-large.mp4',
-    client: 'Live Beats Fest',
+    thumbnailUrl: '',
+    embedUrl: 'https://www.instagram.com/p/C0e-e4qPC1I/embed',
+    externalUrl: 'https://www.instagram.com/p/C0e-e4qPC1I/',
+    client: 'VidaDent',
     year: '2024',
-    role: 'Recap Video & Color Grading',
-    description: 'Resumen explosivo capturando la energía del público y efectos de iluminación.'
+    role: 'Edición Dinámica, Textos & Sonido',
+    description: 'Presentación audiovisual de nuevos artefactos tecnológicos e innovaciones adquiridas por la clínica dental.'
+  },
+  {
+    id: 'v-reel-vidadent-2',
+    title: 'VidaDent: Higiene, Tecnología & Tratamientos',
+    category: 'Comercial / Odontología',
+    type: 'vertical',
+    thumbnailUrl: '',
+    embedUrl: 'https://www.instagram.com/p/C6brtxluOot/embed',
+    externalUrl: 'https://www.instagram.com/p/C6brtxluOot/',
+    client: 'VidaDent',
+    year: '2024',
+    role: 'Videografía & Edición',
+    description: 'Video promocional para redes sociales sobre tratamientos, cuidado e higiene bucal profesional.'
+  },
+  {
+    id: 'v-reel-aviles-1',
+    title: 'Avilés Corp: Recorrido Arquitectónico Residencial',
+    category: 'Arquitectura / Reels',
+    type: 'vertical',
+    thumbnailUrl: '',
+    embedUrl: 'https://www.instagram.com/reel/DcJo82TRDZD/embed',
+    externalUrl: 'https://www.instagram.com/reel/DcJo82TRDZD/',
+    client: 'Avilés Corp (Pako Castillo)',
+    year: '2026',
+    role: 'Edición Rítmica, Estabilización & Color',
+    description: 'Planos fluidos y edición rítmica mostrando espacios arquitectónicos terminados y acabados residenciales.'
+  },
+  {
+    id: 'v-reel-aviles-2',
+    title: 'Avilés Corp: Proyectos & Acabados de Alta Gama',
+    category: 'Arquitectura / Reels',
+    type: 'vertical',
+    thumbnailUrl: '',
+    embedUrl: 'https://www.instagram.com/reel/DWhYAr5keQZ/embed',
+    externalUrl: 'https://www.instagram.com/reel/DWhYAr5keQZ/',
+    client: 'Avilés Corp (Pako Castillo)',
+    year: '2026',
+    role: 'Edición Audiovisual & Color Grading',
+    description: 'Recorrido cinematográfico en formato vertical para destacar detalles de diseño de interiores y construcción.'
+  },
+  {
+    id: 'v-reel-pako-1',
+    title: 'Pako Castillo: Cobertura de Bodas & Fotografía Social',
+    category: 'Bodas / Eventos Sociales',
+    type: 'vertical',
+    thumbnailUrl: '',
+    embedUrl: 'https://www.instagram.com/reel/DcomR_Ji0OP/embed',
+    externalUrl: 'https://www.instagram.com/reel/DcomR_Ji0OP/',
+    client: 'Pako Castillo Studio',
+    year: '2026',
+    role: 'Cámara, Edición & Musicalización',
+    description: 'Reel promocional destacando la experiencia de cobertura fotográfica y cinematográfica en bodas.'
+  },
+  {
+    id: 'v-reel-pako-2',
+    title: 'Pako Castillo: Detrás de Cámaras & Producción',
+    category: 'BTS / Producción Audiovisual',
+    type: 'vertical',
+    thumbnailUrl: '',
+    embedUrl: 'https://www.instagram.com/reel/DOjhg0pEST7/embed',
+    externalUrl: 'https://www.instagram.com/reel/DOjhg0pEST7/',
+    client: 'Pako Castillo Studio',
+    year: '2026',
+    role: 'Cámara en Mano, Montaje & Color',
+    description: 'Detrás de cámaras dinámico mostrando el flujo de trabajo en eventos sociales y sesiones en locación.'
+  },
+  {
+    id: 'v-reel-geosis',
+    title: 'Geosis: Cobertura & Dinamismo en Conferencia',
+    category: 'Corporativo / Shorts',
+    type: 'vertical',
+    thumbnailUrl: 'https://img.youtube.com/vi/kiYEvzyLlBo/hqdefault.jpg',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/kiYEvzyLlBo',
+    externalUrl: 'https://youtube.com/shorts/kiYEvzyLlBo',
+    client: 'Geosis (Pako Castillo)',
+    year: '2024',
+    role: 'Grabación, Edición & Audio',
+    description: 'Formato corto capturando la energía, ponencia y tecnología en conferencia de Geosis.'
   },
 
-  // Videos Horizontales (16:9)
+  // ==================== VIDEOS HORIZONTALES: BODAS & FILMS (16:9) ====================
   {
-    id: 'v-horiz-1',
-    title: 'Showreel Audiovisual — Selección de Proyectos',
-    category: 'Commercial',
+    id: 'v-boda-2026-1',
+    title: 'Boda Cinematográfica: Highlights & Emociones',
+    category: 'Bodas & Eventos Sociales',
     type: 'horizontal',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&h=675&q=80',
-    embedUrl: 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ',
-    client: 'Wayo Audiovisual',
-    year: '2025',
-    role: 'Dirección, Cámara, Edición & Color',
-    description: 'Compilado cinematográfico de los mejores planos, comerciales, videoclips y piezas visuales producidas durante el último año.'
+    thumbnailUrl: 'https://img.youtube.com/vi/N7DeHT4orK0/hqdefault.jpg',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/N7DeHT4orK0',
+    externalUrl: 'https://youtu.be/N7DeHT4orK0',
+    client: 'Pako Castillo Studio',
+    year: '2026',
+    role: 'Videógrafo, Montaje Cinematográfico & Color',
+    description: 'Película de boda con tomas emotivas, color grading cinematográfico y sincronización musical de momentos clave.'
   },
   {
-    id: 'v-horiz-2',
-    title: 'Spot Publicitario: Libertad & Movimiento',
-    category: 'Commercial',
+    id: 'v-boda-2026-2',
+    title: 'Boda & Recepción: Momentos Inolvidables',
+    category: 'Bodas & Eventos Sociales',
     type: 'horizontal',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&h=675&q=80',
-    embedUrl: 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ',
-    client: 'Apex Apparel',
+    thumbnailUrl: 'https://img.youtube.com/vi/t5ckFYCIEc8/hqdefault.jpg',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/t5ckFYCIEc8',
+    externalUrl: 'https://youtu.be/t5ckFYCIEc8',
+    client: 'Pako Castillo Studio',
+    year: '2026',
+    role: 'Cámara Principal, Edición & Audio',
+    description: 'Cobertura integral de recepción de bodas, brindis, fiesta y primeras danzas con planos dinámicos.'
+  },
+  {
+    id: 'v-boda-2025-1',
+    title: 'Boda: Ceremonia, Votos & Celebración',
+    category: 'Bodas & Eventos Sociales',
+    type: 'horizontal',
+    thumbnailUrl: 'https://img.youtube.com/vi/Aa5_zrffmhM/hqdefault.jpg',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/Aa5_zrffmhM',
+    externalUrl: 'https://youtu.be/Aa5_zrffmhM',
+    client: 'Pako Castillo Studio',
+    year: '2025',
+    role: 'Edición, Montaje & Color Grading',
+    description: 'Registro cinematográfico del intercambio de votos y emotiva celebración nupcial.'
+  },
+  {
+    id: 'v-boda-2025-2',
+    title: 'Boda: Resumen Emotivo & Fiesta',
+    category: 'Bodas & Eventos Sociales',
+    type: 'horizontal',
+    thumbnailUrl: 'https://img.youtube.com/vi/yUG9XBWE468/hqdefault.jpg',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/yUG9XBWE468',
+    externalUrl: 'https://youtu.be/yUG9XBWE468',
+    client: 'Pako Castillo Studio',
+    year: '2025',
+    role: 'Videografía & Postproducción Rítmica',
+    description: 'Video resumen de boda con edición ágil capturando la alegría de los novios y familiares.'
+  },
+  {
+    id: 'v-boda-2025-3',
+    title: 'Boda: Preparación Nupcial & Entrega Cinematográfica',
+    category: 'Bodas & Eventos Sociales',
+    type: 'horizontal',
+    thumbnailUrl: 'https://img.youtube.com/vi/OzS_p2ixG-U/hqdefault.jpg',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/OzS_p2ixG-U',
+    externalUrl: 'https://youtu.be/OzS_p2ixG-U',
+    client: 'Pako Castillo Studio',
+    year: '2025',
+    role: 'Cámara en Mano, Edición & Color',
+    description: 'Detalles íntimos de la preparación de los novios y ceremonia de alta categoría.'
+  },
+  {
+    id: 'v-boda-2024-1',
+    title: 'Boda: Votos & Cobertura Completa',
+    category: 'Bodas & Eventos Sociales',
+    type: 'horizontal',
+    thumbnailUrl: 'https://img.youtube.com/vi/Teyf4u_7W18/hqdefault.jpg',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/Teyf4u_7W18',
+    externalUrl: 'https://youtu.be/Teyf4u_7W18',
+    client: 'Pako Castillo Studio',
     year: '2024',
-    role: 'Montaje Offline, Etalonaje & VFX',
-    description: 'Comercial de televisión y plataformas digitales con look anamórfico y grading cinematográfico.'
+    role: 'Grabación en Locación, Edición & Musicalización',
+    description: 'Film de boda capturando la esencia y atmósfera natural de la locación.'
+  },
+  {
+    id: 'v-boda-2024-2',
+    title: 'Boda: Historia de Amor & Recuerdos',
+    category: 'Bodas & Eventos Sociales',
+    type: 'horizontal',
+    thumbnailUrl: 'https://img.youtube.com/vi/aBqu6KUrzv8/hqdefault.jpg',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/aBqu6KUrzv8',
+    externalUrl: 'https://youtu.be/aBqu6KUrzv8',
+    client: 'Pako Castillo Studio',
+    year: '2024',
+    role: 'Cámara, Color & Edición',
+    description: 'Producción audiovisual destacando planos estéticos y momentos familiares de boda.'
+  },
+  {
+    id: 'v-boda-2023-1',
+    title: 'Boda: Momentos Especiales & Fiesta',
+    category: 'Bodas & Eventos Sociales',
+    type: 'horizontal',
+    thumbnailUrl: 'https://img.youtube.com/vi/uNOhS4FrcD8/hqdefault.jpg',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/uNOhS4FrcD8',
+    externalUrl: 'https://youtu.be/uNOhS4FrcD8',
+    client: 'Pako Castillo Studio',
+    year: '2023',
+    role: 'Montaje de Video & Sonido',
+    description: 'Resumen cinematográfico de momentos espontáneos durante la fiesta y recepción.'
+  },
+  {
+    id: 'v-boda-2023-2',
+    title: 'Boda: Celebración & Resumen Audiovisual',
+    category: 'Bodas & Eventos Sociales',
+    type: 'horizontal',
+    thumbnailUrl: 'https://img.youtube.com/vi/-qhtruNcrFw/hqdefault.jpg',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/-qhtruNcrFw',
+    externalUrl: 'https://youtu.be/-qhtruNcrFw',
+    client: 'Pako Castillo Studio',
+    year: '2023',
+    role: 'Edición Completa & Etalonaje',
+    description: 'Película resumen de boda con narrativa emotiva y planos generales.'
+  },
+
+  // ==================== VIDEOS HORIZONTALES: CORPORATIVO & COMERCIAL (16:9) ====================
+  {
+    id: 'v-horiz-prisma',
+    title: 'Prisma Ingenieros: Teaser La Puerta del Diablo',
+    category: 'Corporativo & Teasers',
+    type: 'horizontal',
+    thumbnailUrl: 'https://img.youtube.com/vi/hIRpmQZycOE/maxresdefault.jpg',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/hIRpmQZycOE',
+    externalUrl: 'https://youtu.be/hIRpmQZycOE',
+    client: 'Prisma Ingenieros (vía Boré Films)',
+    year: '2024',
+    role: 'Edición Offline/Online, Ritmo & Color',
+    description: 'Edición de video teaser cinematográfico para mostrar obras de infraestructura e ingeniería arquitectónica en uno de los puntos turísticos más emblemáticos de El Salvador.'
+  },
+  {
+    id: 'v-horiz-aviles-externado',
+    title: 'Avilés Corp: Testimonial Proyecto Externado San José',
+    category: 'Corporativo & Teasers',
+    type: 'horizontal',
+    thumbnailUrl: 'https://img.youtube.com/vi/Yhz-VJFrwGM/maxresdefault.jpg',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/Yhz-VJFrwGM',
+    externalUrl: 'https://youtu.be/Yhz-VJFrwGM',
+    client: 'Avilés Corp (Pako Castillo)',
+    year: '2025',
+    role: 'Edición, Entrevistas & Color Grading',
+    description: 'Video testimonial mostrando la finalización de proyecto arquitectónico en el Colegio Externado San José con testimonios y planos de infraestructura.'
+  },
+  {
+    id: 'v-horiz-el-orbe-1',
+    title: 'EL ORBE: Cobertura Audiovisual de Conferencia',
+    category: 'Corporativo & Teasers',
+    type: 'horizontal',
+    thumbnailUrl: 'https://img.youtube.com/vi/MOvf-MPbA-4/maxresdefault.jpg',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/MOvf-MPbA-4',
+    externalUrl: 'https://youtu.be/MOvf-MPbA-4',
+    client: 'EL ORBE (Pako Castillo)',
+    year: '2024',
+    role: 'Grabación de Conferencias, Edición & Audio',
+    description: 'Cobertura y video resumen de evento corporativo tecnológico de la empresa EL ORBE.'
+  },
+  {
+    id: 'v-horiz-el-orbe-2',
+    title: 'EL ORBE: Resumen Ejecutivo & Evento Tecnológico',
+    category: 'Corporativo & Teasers',
+    type: 'horizontal',
+    thumbnailUrl: 'https://img.youtube.com/vi/3b_8fUKucss/maxresdefault.jpg',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/3b_8fUKucss',
+    externalUrl: 'https://youtu.be/3b_8fUKucss',
+    client: 'EL ORBE (Pako Castillo)',
+    year: '2025',
+    role: 'Edición Audiovisual & Diseño de Sonido',
+    description: 'Resumen dinámico de conferencias con tomas de ponentes, interacción con asistentes y montaje corporativo.'
+  },
+  {
+    id: 'v-horiz-acb-circo',
+    title: 'ACB Circo: Cobertura de Espectáculo & Color en Escenario',
+    category: 'Corporativo & Teasers',
+    type: 'horizontal',
+    thumbnailUrl: 'https://img.youtube.com/vi/_lRT0qscH2g/maxresdefault.jpg',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/_lRT0qscH2g',
+    externalUrl: 'https://youtu.be/_lRT0qscH2g',
+    client: 'ACB Circo / Colegio El Salvador',
+    year: '2025',
+    role: 'Grabación, Edición & Color en Luces de Escenario',
+    description: 'Trabajo de corrección de color y captura de video ante condiciones de iluminación complejas con reflectores, juegos de luces y escenario en vivo.'
+  },
+  {
+    id: 'v-horiz-realeza-optica',
+    title: 'La Realeza Óptica: Spot Promocional',
+    category: 'Corporativo & Teasers',
+    type: 'horizontal',
+    thumbnailUrl: 'https://img.youtube.com/vi/WOH15ot-qSQ/maxresdefault.jpg',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/WOH15ot-qSQ',
+    externalUrl: 'https://youtu.be/WOH15ot-qSQ',
+    client: 'La Realeza Óptica',
+    year: '2024',
+    role: 'Videografía, Edición & Color',
+    description: 'Video promocional para óptica destacando productos, marcas de aros y atención especializada.'
+  },
+  {
+    id: 'v-horiz-ideaton',
+    title: 'Ideatón GetForum: Pitch Dinámico & Presentación Audiovisual',
+    category: 'Branding & Animación',
+    type: 'horizontal',
+    thumbnailUrl: 'https://img.youtube.com/vi/4e_0AruI9P0/maxresdefault.jpg',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/4e_0AruI9P0',
+    externalUrl: 'https://youtu.be/4e_0AruI9P0',
+    client: 'Ideatón GetForum',
+    year: '2025',
+    role: 'Grabación en Cámara, Edición Suite Adobe & Color',
+    description: 'Video explicativo de 3 minutos aplicando la suite de Adobe para lograr un ritmo ágil y explicativo.'
+  },
+  {
+    id: 'v-horiz-floppas',
+    title: 'Floppas Cook: Video Explicativo & Animación de Proyecto',
+    category: 'Branding & Animación',
+    type: 'horizontal',
+    thumbnailUrl: 'https://img.youtube.com/vi/k6VHWLWkIo0/maxresdefault.jpg',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/k6VHWLWkIo0',
+    externalUrl: 'https://youtu.be/k6VHWLWkIo0',
+    client: 'Floppas Cook',
+    year: '2021',
+    role: 'Animación 2D, Edición & Voiceover',
+    description: 'Video de presentación animado explicando el concepto, la interfaz y las funciones de la plataforma Floppas Cook.'
+  },
+  {
+    id: 'v-horiz-the-last-note',
+    title: 'The Last Note: Tráiler & Presentación de Videojuego',
+    category: 'Branding & Animación',
+    type: 'horizontal',
+    thumbnailUrl: 'https://img.youtube.com/vi/riOS8EtgGkA/maxresdefault.jpg',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/riOS8EtgGkA',
+    externalUrl: 'https://youtu.be/riOS8EtgGkA',
+    client: 'The Last Note',
+    year: '2019',
+    role: 'Edición de Tráiler & Sincronización Musical',
+    description: 'Tráiler promocional con estética pixel art y cortes rítmicos para juego educativo.'
   }
 ];
 
 export const designsData: DesignProject[] = [
   {
-    id: 'des-1',
-    title: 'Identidad Visual & Merch para Festival Musical',
-    category: 'Branding',
-    imageUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80',
-    aspectRatio: 'portrait',
-    client: 'Echo Fest',
-    year: '2025',
-    description: 'Sistema gráfico completo, tipografías personalizadas y paleta retro-futurista.'
-  },
-  {
-    id: 'des-2',
-    title: 'Miniaturas de Alto CTR para Canal de YouTube',
-    category: 'Thumbnail',
-    imageUrl: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=1000&q=80',
+    id: 'des-farm-uml',
+    title: 'Farm UML: Sistema & App Web / Móvil de Farmacia',
+    category: 'Branding & UI',
+    imageUrl: '/proyectos/Farm UML/Paleta de colores.png',
+    images: [
+      '/proyectos/Farm UML/Paleta de colores.png',
+      '/proyectos/Farm UML/Inicio de sesión - web.png',
+      '/proyectos/Farm UML/Web Menu.png',
+      '/proyectos/Farm UML/Web Nueva Venta.png',
+      '/proyectos/Farm UML/Web Detalle Venta.png',
+      '/proyectos/Farm UML/Web Procesar Pago.png',
+      '/proyectos/Farm UML/Web Comprobante.png',
+      '/proyectos/Farm UML/Web Reporte de Ventas.png',
+      '/proyectos/Farm UML/Web Reporte de Inventario.png',
+      '/proyectos/Farm UML/Inicio de Sesión - movil.png',
+      '/proyectos/Farm UML/Menu movil.png',
+      '/proyectos/Farm UML/movil Nueva Venta.png',
+      '/proyectos/Farm UML/movil Detalle de Venta.png',
+      '/proyectos/Farm UML/Movil Procesar Pago.png',
+      '/proyectos/Farm UML/Movil Comprobante.png',
+      '/proyectos/Farm UML/Movil Reportes Ventas.png',
+      '/proyectos/Farm UML/Movil Reportes Inventario.png'
+    ],
     aspectRatio: 'landscape',
-    client: 'Creator Hub',
+    client: 'Farma UML',
+    year: '2024',
+    tools: ['Photoshop', 'Illustrator', 'UI/UX Design'],
+    description: 'Diseño integral de experiencia de usuario y arquitectura visual para plataforma de farmacia (versión Web y Móvil), con módulo de ventas, reportes, inventario y comprobantes de pago.'
+  },
+  {
+    id: 'des-hotelnova',
+    title: 'Hotel Nova: Prototipo & Sistema de Reserva de Salas',
+    category: 'Branding & UI',
+    imageUrl: '/proyectos/hotelnova/diseño-hotel-nova.jpg',
+    images: [
+      '/proyectos/hotelnova/diseño-hotel-nova.jpg',
+      '/proyectos/hotelnova/colores.jpg',
+      '/proyectos/hotelnova/hotelnova--index.jpg',
+      '/proyectos/hotelnova/hotelnova--reserva1.jpg',
+      '/proyectos/hotelnova/diseño-hotel-nova---reservaGenerada.jpg',
+      '/proyectos/hotelnova/hotelnova--reservaConfirmada.jpg'
+    ],
+    aspectRatio: 'landscape',
+    client: 'Hotel Nova Concept',
+    year: '2024',
+    tools: ['Photoshop', 'Illustrator', 'UI Design'],
+    description: 'Identidad visual, selección cromática y prototipo de flujo completo de reserva de salones de eventos y salas corporativas.'
+  },
+  {
+    id: 'des-vetai',
+    title: 'VetAI: Identidad Visual, Códigos QR & Prototipo Veterinario',
+    category: 'Branding & UI',
+    imageUrl: '/proyectos/vetai/1.jpg',
+    images: [
+      '/proyectos/vetai/1.jpg',
+      '/proyectos/vetai/3.jpg',
+      '/proyectos/vetai/4.jpg',
+      '/proyectos/vetai/5.jpg',
+      '/proyectos/vetai/6.jpg',
+      '/proyectos/vetai/7.jpg',
+      '/proyectos/vetai/8.jpg',
+      '/proyectos/vetai/9.jpg',
+      '/proyectos/vetai/10.jpg',
+      '/proyectos/vetai/comb1.jpg',
+      '/proyectos/vetai/pruebas de tamaños.png',
+      '/proyectos/vetai/rojo.jpg'
+    ],
+    aspectRatio: 'square',
+    client: 'VetAI Web App',
     year: '2025',
-    description: 'Composición fotográfica, recorte y tratamiento de iluminación para maximizar el click-through-rate.'
+    tools: ['Photoshop', 'Illustrator'],
+    description: 'Diseño de logotipo, estilo para códigos QR escaneables de expedientes clínicos y maquetado de interfaz para app de gestión de mascotas.'
   },
   {
-    id: 'des-3',
-    title: 'Cartel Tipográfico & Editorial Suave',
-    category: 'Poster',
-    imageUrl: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1000&q=80',
+    id: 'des-the-last-note',
+    title: 'The Last Note: Afiches, Cartelería & Pixel Art para Videojuego',
+    category: 'Flyers & Posters',
+    imageUrl: '/proyectos/The Last Note/afiche.jpg',
+    images: [
+      '/proyectos/The Last Note/afiche.jpg',
+      '/proyectos/The Last Note/TLN nivel1.jpg',
+      '/proyectos/The Last Note/TLN nivel2.jpg',
+      '/proyectos/The Last Note/TLN nivel3.png'
+    ],
     aspectRatio: 'portrait',
-    client: 'Wayo Works',
-    year: '2024',
-    description: 'Exploración de contrastes cromáticos y diagramación brutalista limpia.'
+    client: 'The Last Note Game',
+    year: '2019',
+    tools: ['Photoshop', 'Pixel Art', 'Illustrator'],
+    description: 'Afiche publicitario, diseño de niveles en Pixel Art y piezas gráficas promocionales para videojuego educativo.'
   },
   {
-    id: 'des-4',
-    title: 'Kit de Redes Sociales: Carrusel Educativo & Feed',
+    id: 'des-eccdace',
+    title: 'Eccdace: Identidad Corporativa, Logotipo & Módulos UI',
+    category: 'Branding & UI',
+    imageUrl: '/proyectos/Eccdace/Index Definido.jpg',
+    images: [
+      '/proyectos/Eccdace/Index Definido.jpg',
+      '/proyectos/Eccdace/Modulos class idss.jpg',
+      '/proyectos/Eccdace/Social ids.jpg',
+      '/proyectos/Eccdace/lg.jpg',
+      '/proyectos/Eccdace/logo cuadrado.jpg',
+      '/proyectos/Eccdace/sdf.png'
+    ],
+    aspectRatio: 'landscape',
+    client: 'Eccdace Project',
+    year: '2024',
+    tools: ['Photoshop', 'Illustrator'],
+    description: 'Diseño de marca, logotipo corporativo, módulos de clase y estructura de identidad visual.'
+  },
+  {
+    id: 'des-floppas',
+    title: 'Floppas Cook: Identidad de Marca, UI & Recetario Web',
+    category: 'Branding & UI',
+    imageUrl: '/proyectos/floppas cook/1.jpg',
+    images: [
+      '/proyectos/floppas cook/1.jpg',
+      '/proyectos/floppas cook/2.jpg',
+      '/proyectos/floppas cook/3.jpg',
+      '/proyectos/floppas cook/4.jpg'
+    ],
+    aspectRatio: 'portrait',
+    client: 'Proyecto Propio / Académico',
+    year: '2021',
+    tools: ['Photoshop', 'Illustrator', 'Premiere Pro'],
+    description: 'Desarrollo de identidad creativa integral: logotipo, paleta cromática, estilo visual y prototipos de interfaz web para recetas de cocina.'
+  },
+  {
+    id: 'des-vidadent',
+    title: 'VidaDent: Banners Publicitarios & Piezas para Redes',
     category: 'Social Media',
-    imageUrl: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1000&q=80',
+    imageUrl: '/proyectos/vidadent/Banner VidaDENT.png',
+    images: [
+      '/proyectos/vidadent/Banner VidaDENT.png'
+    ],
     aspectRatio: 'square',
-    client: 'Fintech App',
+    client: 'VidaDent (Pako Castillo)',
     year: '2024',
-    description: 'Plantillas modulares para Instagram con iconografía y micro-animaciones.'
+    tools: ['Photoshop', 'Canva'],
+    description: 'Diseño de banner promocional para clínica dental resaltando servicios odontológicos, higiene y tecnología.'
   },
   {
-    id: 'des-5',
-    title: 'Cover Art para Single Musical: Synth & Nostalgia',
-    category: 'Branding',
-    imageUrl: 'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=1000&q=80',
-    aspectRatio: 'square',
-    client: 'Midnight Tape',
+    id: 'des-personal-1',
+    title: 'Fondo Creativo: Composición Visual & Efectos de Luz',
+    category: 'Social Media',
+    imageUrl: '/proyectos/Personales/fondo-ganador.jpg',
+    images: [
+      '/proyectos/Personales/fondo-ganador.jpg'
+    ],
+    aspectRatio: 'landscape',
+    client: 'Proyecto Personal',
     year: '2024',
-    description: 'Dirección de arte y fotomontaje digital para lanzamiento en Spotify y Apple Music.'
+    tools: ['Photoshop', 'Digital Art'],
+    description: 'Composición gráfica y arte digital con efectos de iluminación, texturas y atmósfera envolvente.'
   },
   {
-    id: 'des-6',
-    title: 'Diseño Editorial & Lookbook de Moda',
-    category: 'Editorial',
+    id: 'des-personal-2',
+    title: 'Banner Promocional: Redes Sociales & Portadas',
+    category: 'Social Media',
+    imageUrl: '/proyectos/Personales/banner facebook lesson2.jpg',
+    images: [
+      '/proyectos/Personales/banner facebook lesson2.jpg'
+    ],
+    aspectRatio: 'landscape',
+    client: 'Proyecto Personal / Redes',
+    year: '2024',
+    tools: ['Photoshop', 'Illustrator'],
+    description: 'Banner publicitario diseñado con jerarquía visual y diagramación para publicaciones en Facebook y redes sociales.'
+  },
+  {
+    id: 'des-personal-3',
+    title: 'Arte Digital: Montaje & Tratamiento de Color',
+    category: 'Social Media',
+    imageUrl: '/proyectos/Personales/asdas.jpg',
+    images: [
+      '/proyectos/Personales/asdas.jpg'
+    ],
+    aspectRatio: 'square',
+    client: 'Proyecto Personal',
+    year: '2024',
+    tools: ['Photoshop'],
+    description: 'Diseño publicitario y composición gráfica con manipulación de imagen y estilismo visual.'
+  },
+  {
+    id: 'des-imprenta',
+    title: 'Artes de Imprenta: Líneas de Corte & Formatos Pre-Prensa',
+    category: 'Imprenta & Editorial',
     imageUrl: 'https://images.unsplash.com/photo-1509281373149-e957c6296406?auto=format&fit=crop&w=1000&q=80',
     aspectRatio: 'portrait',
-    client: 'Sartorial Mag',
-    year: '2024',
-    description: 'Maquetación de revista impresa y digital con fotografía documental.'
+    client: 'Taller de Imprenta',
+    year: '2023',
+    tools: ['CorelDRAW', 'Photoshop'],
+    description: 'Diagramación para impresión en papel cuché, folcote, lonas publicitarias y tarjetas con sangrado y líneas de corte.'
   }
 ];
 
 export const photosData: PhotoProject[] = [
   {
-    id: 'pho-1',
-    title: 'Retrato de Estudio con Luces de Neón & Sombras',
-    category: 'Portrait',
-    imageUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80',
+    id: 'pho-boda-carlos-alejandra',
+    title: 'Boda Carlos & Alejandra: Cobertura Nupcial Completa',
+    category: 'Social Events',
+    imageUrl: '/fotos/Boda carlos y alejandra/PAK0-18.jpg',
+    images: [
+      '/fotos/Boda carlos y alejandra/PAK0-18.jpg',
+      '/fotos/Boda carlos y alejandra/PAK0-24.jpg',
+      '/fotos/Boda carlos y alejandra/PAK0-187.jpg',
+      '/fotos/Boda carlos y alejandra/PAK0-220.jpg',
+      '/fotos/Boda carlos y alejandra/PAK0-246.jpg',
+      '/fotos/Boda carlos y alejandra/PAK0-295.jpg',
+      '/fotos/Boda carlos y alejandra/PAK0-301.jpg',
+      '/fotos/Boda carlos y alejandra/PAK0-378.jpg',
+      '/fotos/Boda carlos y alejandra/PAK0-409.jpg',
+      '/fotos/Boda carlos y alejandra/PAK0-412.jpg',
+      '/fotos/Boda carlos y alejandra/PAK0-423.jpg',
+      '/fotos/Boda carlos y alejandra/PAK0-427.jpg',
+      '/fotos/Boda carlos y alejandra/PAK0-475.jpg',
+      '/fotos/Boda carlos y alejandra/PAK0-499.jpg',
+      '/fotos/Boda carlos y alejandra/PAK0-599.jpg',
+      '/fotos/Boda carlos y alejandra/PAK0-606.jpg',
+      '/fotos/Boda carlos y alejandra/PAK0-608.jpg',
+      '/fotos/Boda carlos y alejandra/PAK0-629.jpg',
+      '/fotos/Boda carlos y alejandra/PAK0-639.jpg',
+      '/fotos/Boda carlos y alejandra/PAK0-651.jpg',
+      '/fotos/Boda carlos y alejandra/PAK0-660.jpg',
+      '/fotos/Boda carlos y alejandra/PAK0-699.jpg',
+      '/fotos/Boda carlos y alejandra/PAK0-703.jpg',
+      '/fotos/Boda carlos y alejandra/PAK0-717.jpg',
+      '/fotos/Boda carlos y alejandra/PAK0-751.jpg',
+      '/fotos/Boda carlos y alejandra/PAK0-773.jpg'
+    ],
+    year: '2026',
+    location: 'San Salvador',
+    gear: 'Sony FX30 / Sony Alpha + Flashes Manuales',
+    description: 'Álbum completo de boda: ceremonia, retrato de novios, intercambio de anillos y recepción con iluminación controlada.'
+  },
+  {
+    id: 'pho-boda-faby-xavi',
+    title: 'Boda Faby & Xavi: Sesión Nupcial & Emociones',
+    category: 'Social Events',
+    imageUrl: '/fotos/boda faby y xavi/3.jpg',
+    images: [
+      '/fotos/boda faby y xavi/3.jpg',
+      '/fotos/boda faby y xavi/15.jpg',
+      '/fotos/boda faby y xavi/133.jpg',
+      '/fotos/boda faby y xavi/143.jpg',
+      '/fotos/boda faby y xavi/144.jpg',
+      '/fotos/boda faby y xavi/157.jpg',
+      '/fotos/boda faby y xavi/193.jpg',
+      '/fotos/boda faby y xavi/240.jpg',
+      '/fotos/boda faby y xavi/262.jpg',
+      '/fotos/boda faby y xavi/282.jpg',
+      '/fotos/boda faby y xavi/289.jpg',
+      '/fotos/boda faby y xavi/359.jpg',
+      '/fotos/boda faby y xavi/367.jpg',
+      '/fotos/boda faby y xavi/384.jpg'
+    ],
     year: '2025',
-    location: 'Estudio San Salvador',
-    gear: 'Sony A7IV + 85mm f/1.4'
+    location: 'San Salvador',
+    gear: 'Sony + 85mm f/1.4 + Flash Rebotado',
+    description: 'Reportaje fotográfico capturando momentos espontáneos, retratos en pareja y detalles decorativos de boda.'
   },
   {
-    id: 'pho-2',
-    title: 'Fotografía Callejera & Arquitectura Brutalista',
-    category: 'Street',
-    imageUrl: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80',
+    id: 'pho-boda-lili-gio',
+    title: 'Boda Lili & Gio: Retrato Editorial & Ceremonia',
+    category: 'Social Events',
+    imageUrl: '/fotos/boda lili and gio/13.jpg',
+    images: [
+      '/fotos/boda lili and gio/13.jpg',
+      '/fotos/boda lili and gio/68.jpg',
+      '/fotos/boda lili and gio/90.jpg',
+      '/fotos/boda lili and gio/118.jpg',
+      '/fotos/boda lili and gio/139.jpg',
+      '/fotos/boda lili and gio/174.jpg',
+      '/fotos/boda lili and gio/193.jpg',
+      '/fotos/boda lili and gio/236.jpg',
+      '/fotos/boda lili and gio/245.jpg',
+      '/fotos/boda lili and gio/272.jpg',
+      '/fotos/boda lili and gio/317.jpg',
+      '/fotos/boda lili and gio/369.jpg',
+      '/fotos/boda lili and gio/387.jpg'
+    ],
     year: '2025',
-    location: 'Centro Histórico',
-    gear: 'Sony A7IV + 35mm f/1.8'
+    location: 'El Salvador',
+    gear: 'Sony Alpha + Lente Retrato 50mm / 85mm',
+    description: 'Serie fotográfica de boda con enfoque documental, captura de miradas y emotividad en cada toma.'
   },
   {
-    id: 'pho-3',
-    title: 'Sesión Editorial en Locación Costera',
-    category: 'Portrait',
-    imageUrl: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80',
+    id: 'pho-boda-georgina-cristo',
+    title: 'Boda Georgina & Cristo: Celebración & Recuerdos',
+    category: 'Social Events',
+    imageUrl: '/fotos/boda georgina y cristo/4.jpg',
+    images: [
+      '/fotos/boda georgina y cristo/4.jpg',
+      '/fotos/boda georgina y cristo/7.jpg',
+      '/fotos/boda georgina y cristo/45.jpg',
+      '/fotos/boda georgina y cristo/56.jpg',
+      '/fotos/boda georgina y cristo/122.jpg',
+      '/fotos/boda georgina y cristo/177.jpg',
+      '/fotos/boda georgina y cristo/181.jpg',
+      '/fotos/boda georgina y cristo/199.jpg'
+    ],
     year: '2024',
-    location: 'El Zonte',
-    gear: 'Sony A7IV + 50mm f/1.2'
+    location: 'San Salvador',
+    gear: 'Sony Alpha + Speedlights Manuales',
+    description: 'Fotografía de bodas con luz natural y flash de relleno en exteriores.'
   },
   {
-    id: 'pho-4',
-    title: 'Fotografía de Producto: Relojes & Accesorios',
-    category: 'Product',
-    imageUrl: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=80',
+    id: 'pho-boda-claudia-carlos',
+    title: 'Boda Claudia & Carlos: Ceremonia Social',
+    category: 'Social Events',
+    imageUrl: '/fotos/boda claudia y carlos/27.jpg',
+    images: [
+      '/fotos/boda claudia y carlos/27.jpg',
+      '/fotos/boda claudia y carlos/156.jpg',
+      '/fotos/boda claudia y carlos/160.jpg',
+      '/fotos/boda claudia y carlos/253.jpg',
+      '/fotos/boda claudia y carlos/255.jpg',
+      '/fotos/boda claudia y carlos/278.jpg'
+    ],
     year: '2024',
-    location: 'Estudio Wayo',
-    gear: 'Sony A7IV + 90mm Macro f/2.8'
+    location: 'San Salvador',
+    gear: 'Sony + 35mm / 85mm Prime',
+    description: 'Tomas de la ceremonia y retratos de novios en iglesia y salón de recepción.'
   },
   {
-    id: 'pho-5',
-    title: 'Concierto en Directo: Emoción & Destellos',
-    category: 'Event',
-    imageUrl: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80',
+    id: 'pho-bokeh-sesion',
+    title: 'logo de bokeh',
+    category: 'Lighting & Flash',
+    imageUrl: '/proyectos/Bokeh/1.jpg',
+    images: [
+      '/proyectos/Bokeh/1.jpg',
+      '/proyectos/Bokeh/2.jpg',
+      '/proyectos/Bokeh/3.jpg',
+      '/proyectos/Bokeh/4.jpg'
+    ],
     year: '2024',
-    location: 'Anfiteatro',
-    gear: 'Sony A7IV + 70-200mm f/2.8'
-  },
-  {
-    id: 'pho-6',
-    title: 'Geometría Urbana al Atardecer',
-    category: 'Street',
-    imageUrl: 'https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80',
-    year: '2024',
-    location: 'Distrito Financiero',
-    gear: 'Sony A7IV + 24-70mm f/2.8'
+    location: '',
+    gear: '',
+    description: ''
   }
 ];

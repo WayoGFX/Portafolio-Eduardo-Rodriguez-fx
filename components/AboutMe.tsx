@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Phone, Mail, ArrowRight, Sparkles } from 'lucide-react';
 import { InstagramIcon, WhatsAppIcon } from './BrandIcons';
 import RetroStar from './RetroStar';
-import { personalInfo, contactData, educationData, toolsData, skillsData } from '../data/portfolioData';
+import { personalInfo, contactData, educationData, toolsData, skillsData, softSkillsData } from '../data/portfolioData';
 
 interface AboutMeProps {
   onViewWorksClick: () => void;
@@ -48,6 +48,12 @@ export const AboutMe: React.FC<AboutMeProps> = ({ onViewWorksClick }) => {
                 <img
                   src={personalInfo.avatarUrl}
                   alt={personalInfo.name}
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    if (target.src !== personalInfo.fallbackAvatarUrl) {
+                      target.src = personalInfo.fallbackAvatarUrl;
+                    }
+                  }}
                   className="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-500"
                 />
               </div>
@@ -162,16 +168,30 @@ export const AboutMe: React.FC<AboutMeProps> = ({ onViewWorksClick }) => {
                 </div>
               </div>
 
-              {/* Skills Tags */}
+              {/* Skills & Actitudes Section matching Reference 2 Dual-Tone Layout */}
               <div>
                 <h4 className="font-serif-display text-xl sm:text-2xl text-[#2739e5] mb-2.5">
-                  Habilidades
+                  Actitudes & Habilidades
                 </h4>
+                
+                {/* 1. Actitudes de Valor / Soft Skills (Solid Blue Pills) */}
+                <div className="flex flex-wrap gap-1.5 mb-2">
+                  {softSkillsData.map((val, idx) => (
+                    <span
+                      key={`soft-${idx}`}
+                      className="bg-[#2739e5] text-white px-3 py-1 rounded-full text-xs font-bold shadow-sm hover:bg-[#1a28bf] hover:scale-105 transition-all cursor-default"
+                    >
+                      {val}
+                    </span>
+                  ))}
+                </div>
+
+                {/* 2. Habilidades Técnicas (White Pills with Blue Border) */}
                 <div className="flex flex-wrap gap-1.5">
                   {skillsData.map((skill, idx) => (
                     <span
-                      key={idx}
-                      className="bg-[#2739e5]/10 text-[#2739e5] border border-[#2739e5]/25 px-2.5 py-0.5 rounded-full text-xs font-semibold hover:bg-[#2739e5] hover:text-white transition-colors cursor-default"
+                      key={`tech-${idx}`}
+                      className="bg-white text-[#2739e5] border border-[#2739e5]/35 px-2.5 py-0.5 rounded-full text-xs font-semibold hover:bg-[#2739e5]/10 transition-colors cursor-default"
                     >
                       {skill}
                     </span>

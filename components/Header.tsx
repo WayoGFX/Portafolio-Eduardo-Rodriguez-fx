@@ -6,7 +6,6 @@ interface HeaderProps {
   currentView: View;
   setView: (v: View) => void;
   onMenuClick: () => void;
-  onNavigateSection?: (sectionId: string) => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -89,8 +88,10 @@ export const Header: React.FC<HeaderProps> = ({
           </button>
 
           <button
-            onClick={() => handleNavClick('doodles')}
-            className="text-gray-700 hover:text-[#2739e5] transition-colors flex items-center gap-1"
+            onClick={() => setView('live')}
+            className={`transition-colors flex items-center gap-1.5 ${
+              currentView === 'live' ? 'text-[#2739e5]' : 'text-gray-700 hover:text-[#2739e5]'
+            }`}
           >
             <Sparkles className="w-3.5 h-3.5 text-[#2739e5]" />
             <span>doodles</span>
