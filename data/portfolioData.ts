@@ -632,17 +632,6 @@ export const designsData: DesignProject[] = [
     year: '2024',
     tools: ['Photoshop'],
     description: 'Diseño publicitario y composición gráfica con manipulación de imagen y estilismo visual.'
-  },
-  {
-    id: 'des-imprenta',
-    title: 'Artes de Imprenta: Líneas de Corte & Formatos Pre-Prensa',
-    category: 'Imprenta & Editorial',
-    imageUrl: 'https://images.unsplash.com/photo-1509281373149-e957c6296406?auto=format&fit=crop&w=1000&q=80',
-    aspectRatio: 'portrait',
-    client: 'Taller de Imprenta',
-    year: '2023',
-    tools: ['CorelDRAW', 'Photoshop'],
-    description: 'Diagramación para impresión en papel cuché, folcote, lonas publicitarias y tarjetas con sangrado y líneas de corte.'
   }
 ];
 
