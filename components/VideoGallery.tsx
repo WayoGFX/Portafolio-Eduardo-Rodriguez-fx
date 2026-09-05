@@ -46,6 +46,10 @@ export const VideoGallery: React.FC<VideoGalleryProps> = ({
     });
   };
 
+  const bodasCount = horizontalVideos.filter(v => v.category.toLowerCase().includes('boda') || v.category.toLowerCase().includes('social')).length;
+  const corpCount = horizontalVideos.filter(v => v.category.toLowerCase().includes('corporativo') || v.category.toLowerCase().includes('teaser')).length;
+  const animCount = horizontalVideos.filter(v => v.category.toLowerCase().includes('branding') || v.category.toLowerCase().includes('animación') || v.category.toLowerCase().includes('tráiler') || v.category.toLowerCase().includes('pitch')).length;
+
   return (
     <div className="space-y-14">
       {/* Primary Video Format Filter */}
@@ -208,7 +212,7 @@ export const VideoGallery: React.FC<VideoGalleryProps> = ({
               }`}
             >
               <Heart className="w-3 h-3 text-pink-500" />
-              <span>Películas de Boda (9)</span>
+              <span>Películas de Boda & Social ({bodasCount})</span>
             </button>
             <button
               onClick={() => setHorizontalSubFilter('corporativo')}
@@ -219,7 +223,7 @@ export const VideoGallery: React.FC<VideoGalleryProps> = ({
               }`}
             >
               <Building className="w-3 h-3 text-blue-500" />
-              <span>Corporativo & Teasers (5)</span>
+              <span>Corporativo & Teasers ({corpCount})</span>
             </button>
             <button
               onClick={() => setHorizontalSubFilter('animacion')}
@@ -230,7 +234,7 @@ export const VideoGallery: React.FC<VideoGalleryProps> = ({
               }`}
             >
               <Sparkles className="w-3 h-3 text-amber-500" />
-              <span>Branding & Animación (3)</span>
+              <span>Branding & Animación ({animCount})</span>
             </button>
           </div>
 
